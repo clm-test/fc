@@ -1,4 +1,4 @@
-# 🚀 FarProfile – Farcaster Mini App
+# 🚀 FirstCast – Farcaster Mini App
 
 This is a **Mini App** built for [**Farcaster**](https://farcaster.xyz), a decentralized social media protocol.
 
