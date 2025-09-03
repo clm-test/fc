@@ -8,7 +8,7 @@ export async function GET(req: Request) {
     (
       <div tw="flex w-[600px] h-[400px] justify-center items-center bg-[#b4a3d4]">
         <img
-          src={`https://client.farcaster.xyzz/v2/cast-image?castHash=${hash}`}
+          src={`https://client.farcaster.xyz/v2/cast-image?castHash=${hash}`}
           alt="Overlay"
           tw="h-full object-contain"
         />
