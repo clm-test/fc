@@ -161,9 +161,9 @@ export default function Main() {
           <div className="bg-[#192734] text-white rounded-2xl shadow-lg max-w-xl w-full border border-[#2F3336]">
             <div
               onClick={() =>
-                            sdk.actions.viewCast({
-                hash: hashData?.hash  ,
-              })
+                sdk.actions.viewCast({
+                  hash: hashData?.hash,
+                })
               }
               style={{ cursor: "pointer" }}
             >
@@ -173,13 +173,13 @@ export default function Main() {
               />
             </div>
           </div>
+          <Mint />
           {storageData?.limit === storageData?.used && (
             <div className="text-red-600 text-xs text-center">
               This might not be your First cast because you are running out of
               storage
             </div>
           )}
-          <Mint />
           <div
             className="fixed bottom-10 right-10 w-12 aspect-square rounded-full border-2 border-white z-50 flex items-center justify-center text-white"
             onClick={cast}
