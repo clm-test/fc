@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useCallback, useState } from "react";
-import sdk, { type Context } from "@farcaster/frame-sdk";
+import sdk, { type Context } from "@farcaster/miniapp-sdk";
 import {
   useAccount,
   useSendTransaction,
@@ -17,7 +17,7 @@ import { BaseError, UserRejectedRequestError } from "viem";
 
 export default function Main() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
-  const [context, setContext] = useState<Context.FrameContext>();
+  const [context, setContext] = useState<Context.MiniAppContext>();
   const [txHash, setTxHash] = useState<string | null>(null);
 
   const { isConnected } = useAccount();
@@ -131,13 +131,13 @@ export default function Main() {
 
           <div className="flex items-center justify-center p-2 bg-white rounded-lg mt-4">
             <a
-              href="https://warpcast.com/cashlessman.eth/0x084518c4"
+              href="https://farcaster.xyz/cashlessman.eth/0x084518c4"
               target="_blank"
               rel="noopener noreferrer"
               className="shadow-lg shadow-white"
             >
               <img
-                src="https://farcaster/og-logo.png"
+                src="https://farcaster.xyz/og-logo.png"
                 alt="Profile"
                 className="w-28 h-28 shadow-lg"
               />
@@ -161,9 +161,9 @@ export default function Main() {
           <div className="bg-[#192734] text-white rounded-2xl shadow-lg max-w-xl w-full border border-[#2F3336]">
             <div
               onClick={() =>
-                sdk.actions.openUrl(
-                  `https://farcaaster.xyz/~/conversations/${hashData?.hash}`
-                )
+                            sdk.actions.viewCast({
+                hash: hashData?.hash  ,
+              })
               }
               style={{ cursor: "pointer" }}
             >
